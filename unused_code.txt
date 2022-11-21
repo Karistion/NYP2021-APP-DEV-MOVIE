@@ -1,0 +1,111 @@
+   <!-- code for icon --> (Python)
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="H Movies"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
+
+
+     class PaymentForm(FlaskForm):  #AREA FOR HTML-PY ERRORR
+        card_number= StringField("Card Number", validators=[DataRequired(),
+            Length(min=16, max=16 ,message="Card number must be 16 digits long!")])  #Username will also be used as label in html 
+
+    expiry_date= DateTimeField('Expiry Date (MM/YY)',validators=[DataRequired()])
+
+    issue_date= DateTimeField('Expiry Date (MM/YY)',validators=[DataRequired()])
+
+    cvv= StringField('CVV',validators=[DataRequired(),
+        Length(min=3,max=3)])
+   
+
+   {% extends "base.html" %}
+{% block title %}paymentpage{% endblock %}
+
+
+{% block content %}
+    <!-<- body style="background-color: #301934"> ->
+    <div class="container">
+            <h1>Confirm Your Payment</h1>
+            <div class="first-row">
+                <div class="owner">
+                    <h3>Full Name</h3>
+                    <div class="input-field">
+                        <input type="text" placeholder="eg. Jay Won">
+                    </div>
+                </div>
+                <div class="cvv">
+                    <h3>CVV</h3>
+                    <div class="input-field">
+                        <input type="password" placeholder="eg. 000">
+                    </div>
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="card-number">
+                    <h3>Card Number</h3>
+                    <div class="input-field">
+                        <input type="text" placeholder="eg. 0000 0000 0000 0000">
+                    </div>
+                </div>
+            </div>
+            <div class="third-row">
+                <h3>Card Number</h3>
+                <div class="selection">
+                    <div class="date">
+                        <select name="months" id="months">
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
+                        </select>
+                        <select name="years" id="years">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                        </select>
+                    </div>
+                    <div class="cards">
+                        <img src="mc.png" alt="">
+                        <img src="vi.png" alt="">
+                        <img src="pp.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <a href="">Confirm</a>
+        </div>
+    </-body>
+{% endblock %}
+
+Default User:
+   the1stman
+   the1stman@gmail.com
+   12345678
+   12345678
